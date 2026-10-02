@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Employee Management</h1>
+        <button class="add-btn" onclick="navigateToForm()">Add Employee</button>
+      
+          <button id="logoutBtn" class="logout-btn">Logout</button>
+    </div>
+    <div id="logoutModal" class="modal-overlay">
+  <div class="modal-box">
+    <p>Are you sure you want to logout?</p>
+    <div class="modal-buttons">
+      <button id="confirmLogout" class="ok-btn">OK</button>
+      <button id="cancelLogout" class="cancel-btn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+    <table>
+       <thead>
+  <tr>
+    <th>Employee ID</th>
+    <th>Name</th>
+    <th>DOB</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Gender</th>
+    <th>Country</th>
+    <th>State</th>
+    <th>City</th>
+    <th>Languages</th>
+    <th>Actions</th>
+  </tr>
+</thead>
+
+        <tbody id="employeeTableBody">
+            <!-- Data will load here -->
+             <!-- View Modal -->
+<div id="viewModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div id="employeeDetails"></div>
+  </div>
+</div>
+
+
+        </tbody>
+    </table>
+    <div id="pagination" class="pagination-controls">
+  <button id="prevPage" disabled>Previous</button>
+  <span>Page <span id="currentPage">1</span> of <span id="totalPages">1</span></span>
+  <button id="nextPage" disabled>Next</button>
+</div>
+<div id="editForm" style="display:none; border: 1px solid #ccc; padding: 10px; margin-top: 20px;">
+  <h3>Edit Employee</h3>
+  <input type="hidden" id="edit-employeeId" />
+
+  <label>Name:</label>
+  <input type="text" id="edit-name" required><br>
+
+  <label>DOB:</label>
+  <input type="date" id="edit-dob" required><br>
+
+  <label>Email:</label>
+  <input type="email" id="edit-emailAddress" required><br>
+
+  <label>Address:</label>
+  <textarea id="edit-address" required></textarea><br>
+
+  <label>Gender:</label>
+  <select id="edit-gender" required>
+    <option value="0">Male</option>
+    <option value="1">Female</option>
+    <option value="2">Other</option>
+  </select><br>
+
+  <label>Country:</label>
+  <select id="edit-country" required></select><br>
+
+  <label>State:</label>
+  <select id="edit-state" required></select><br>
+
+  <label>City:</label>
+  <select id="edit-city" required></select><br>
+
+  <label>Languages:</label>
+  <div id="edit-languages"></div>
+  <div id="edit-proficiencyLevels"></div><br>
+
+  
+  <button onclick="submitEdit()">Save</button>
+  <button onclick="cancelEdit()">Cancel</button>
+</div>
+
+
+    
+    <script src="dashboard.js"></script>
+   
+</body>
+</html>

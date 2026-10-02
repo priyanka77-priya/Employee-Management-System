@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Employee Registration Form</h2>
+    <form id="employeeForm">
+        <label>Name:</label>
+        <input type="text" name="name" required><br>
+
+        <label>Date of Birth:</label>
+        <input type="date" name="dob" required><br>
+
+        <label>Email:</label>
+        <input type="email" name="emailAddress" required><br>
+
+        <label>Address:</label>
+        <textarea name="address" required></textarea><br>
+        <label>Gender:</label>
+        <select name="gender" required>
+    <option value="" disabled selected>Select Gender</option>
+    <option value="1">Male</option>
+    <option value="2">Female</option>
+    <option value="3">Others</option>
+</select>
+
+        <label>Country:</label>
+        <select id="country" name="countryId" required>
+            <option value="">Select Country</option>
+        </select><br>
+        <label>State:</label>
+        <select id="state" name="stateId" required>
+            <option value="">Select State</option>
+        </select><br>
+
+        <label>City:</label>
+        <select id="city" name="cityId" required>
+            <option value="">Select City</option>
+        </select><br>
+
+        <label>Languages:</label><br>
+        <div id="languages"></div>
+        <div id="proficiencyLevels"></div><br>
+
+        <button type="submit">Submit</button>
+       <button type="button" id="cancelButton">Cancel</button>
+    </form>
+
+    <div id="message"></div>
+
+  
+     <script src="form.js"></script>
+</body>
+</html>
